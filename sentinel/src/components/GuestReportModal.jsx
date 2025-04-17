@@ -33,23 +33,27 @@ const GuestReportModal = ({ onClose }) => {
     setTimeout(onClose, 300);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-
-    if (!description.trim() || !location.trim()) {
-      toast.error("Please fill in all fields.");
-      return;
-    }
-
-    toast.success("🎉 Your anonymous report was submitted successfully!");
-
-    setDescription("");
-    setLocation("");
-    localStorage.removeItem("guest-description");
-    localStorage.removeItem("guest-location");
-    handleClose();
-  };
-
+    const handleSubmit = (e) => {
+        e.preventDefault();
+    
+        const timestamp = new Date().toISOString();
+    
+        const reportData = {
+        description,
+        location,
+        timestamp,
+        };
+    
+        console.log("📝 Report Data:", reportData);
+    
+        alert("🎉 Your anonymous report was submitted successfully!");
+    
+        // Clear inputs and close modal
+        setDescription("");
+        setLocation("");
+        handleClose();
+    };
+  
   return (
     <div className="fixed inset-0 z-50 lg:hidden font-poppins">
       {/* Backdrop */}
