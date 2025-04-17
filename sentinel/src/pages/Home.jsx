@@ -1,6 +1,9 @@
+import { useState } from "react";
 import Header from '../components/Header';
+import GuestReportModal from "../components/GuestReportModal";
 
 function Home() {
+    const [showGuestModal, setShowGuestModal] = useState(false);
     return (
         <section className="min-h-screen flex items-center justify-center bg-[#F8F8F8] px-[1.25rem] font-poppins">
             <div className="flex flex-col items-stretch justify-center md:flex-row bg-white rounded-[1.5rem] shadow-lg p-6 md:p-12 max-w-5xl w-full gap-[1rem]">
@@ -11,7 +14,7 @@ function Home() {
                 </div>
 
                 {/* Right - Text and Buttons */}
-                <div className="w-full md:w-1/2 flex flex-col justify-centermd:pl-8 bg-white border-[1px] border-solid border-[#E7E7E7] rounded-[0.5rem] py-[2rem] px-[2.5rem]">
+                <div className="w-full md:w-1/2 flex flex-col justify-centermd:pl-8 bg-white border-[1px] border-solid border-[#E7E7E7] rounded-[0.5rem] py-[2rem] lg:px-[2.5rem] px-[1rem]">
                     <h2 className="text-[1.8rem] font-[700] bg-gradient-to-r from-[#4A3391] to-[#001ECA] bg-clip-text text-transparent mb-[0.7rem]">
                         Welcome to Sentinel!
                     </h2>
@@ -38,11 +41,22 @@ function Home() {
                     </button>
 
                     <div className="text-center text-[#515151] text-[1rem] font-[500]">or</div>
+                    <button className="bg-[#3FABE1] lg:flex flex-row hidden justify-center text-white font-medium text-[0.9rem] py-[0.8rem] mt-[1rem] rounded-lg gap-2">
+                        <img src="/images/auth_images/anonymous.svg" alt="Anonymous Icon" />
+                        Report as a guest
+                    </button>
 
-                    <button className="bg-[#3FABE1] text-white font-medium text-[0.9rem] py-[0.8rem] mt-[1rem] rounded-lg">Report as a guest</button>
+                    <button onClick={() => setShowGuestModal(true)} className="lg:hidden flex flex-row justify-center bg-[#3FABE1] text-white font-medium text-[0.9rem] py-[0.8rem] mt-[1rem] rounded-lg gap-2">
+                        <img src="/images/auth_images/anonymous.svg" alt="Anonymous Icon" />
+                        Report as a guest
+                    </button>
                 </div>
 
             </div>
+            {/* Only shows on mobile */}
+            {showGuestModal && (
+            <GuestReportModal onClose={() => setShowGuestModal(false)} />
+            )}
         </section>
     );
 }
