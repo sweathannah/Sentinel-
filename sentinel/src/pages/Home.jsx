@@ -1,9 +1,11 @@
 import { useState } from "react";
 import Header from '../components/Header';
+import { useNavigate } from "react-router-dom";
 import GuestReportModal from "../components/GuestReportModal";
 
 function Home() {
     const [showGuestModal, setShowGuestModal] = useState(false);
+    const navigate = useNavigate()
     return (
         <section className="min-h-screen flex items-center justify-center bg-[#F8F8F8] px-[1.25rem] font-poppins">
             <div className="flex flex-col items-stretch justify-center md:flex-row bg-white rounded-[1.5rem] shadow-lg p-6 md:p-12 max-w-5xl w-full gap-[1rem]">
@@ -41,7 +43,10 @@ function Home() {
                     </button>
 
                     <div className="text-center text-[#515151] text-[1rem] font-[500]">or</div>
-                    <button className="bg-[#3FABE1] lg:flex flex-row hidden justify-center text-white font-medium text-[0.9rem] py-[0.8rem] mt-[1rem] rounded-lg gap-2">
+                    <button 
+                        onClick={() => navigate("/guest-report", {navigate: true})}
+                        className="bg-[#3FABE1] lg:flex flex-row hidden justify-center text-white font-medium text-[0.9rem] py-[0.8rem] mt-[1rem] rounded-lg gap-2">
+                        
                         <img src="/images/auth_images/anonymous.svg" alt="Anonymous Icon" />
                         Report as a guest
                     </button>

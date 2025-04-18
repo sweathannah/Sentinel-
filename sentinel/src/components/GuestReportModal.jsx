@@ -33,27 +33,23 @@ const GuestReportModal = ({ onClose }) => {
     setTimeout(onClose, 300);
   };
 
-    const handleSubmit = (e) => {
-        e.preventDefault();
-    
-        const timestamp = new Date().toISOString();
-    
-        const reportData = {
-        description,
-        location,
-        timestamp,
-        };
-    
-        console.log("📝 Report Data:", reportData);
-    
-        alert("🎉 Your anonymous report was submitted successfully!");
-    
-        // Clear inputs and close modal
-        setDescription("");
-        setLocation("");
-        handleClose();
-    };
-  
+  const handleSubmit = (e) => {
+    e.preventDefault();
+
+    if (!description.trim() || !location.trim()) {
+      toast.error("Please fill in all fields.");
+      return;
+    }
+
+    toast.success("🎉 Your anonymous report was submitted successfully!");
+
+    setDescription("");
+    setLocation("");
+    localStorage.removeItem("guest-description");
+    localStorage.removeItem("guest-location");
+    handleClose();
+  };
+
   return (
     <div className="fixed inset-0 z-50 lg:hidden font-poppins">
       {/* Backdrop */}
@@ -88,16 +84,16 @@ const GuestReportModal = ({ onClose }) => {
           >
             What is going on?
           </label>
-          <textarea
-            ref={descriptionRef}
-            id="Description"
-            name="Description"
-            placeholder="Describe what is happening"
-            value={description}
-            onChange={(e) => setDescription(e.target.value)}
-            className="w-full h-28 resize-y border border-[#D9D9D9] text-[#515151] font-normal text-[0.875rem] p-2 rounded mt-0 mb-4 focus:outline-none focus:ring-1 focus:ring-[#2545FF] focus:border-[#2545FF]"
-            >
-            </textarea>
+            <textarea
+                ref={descriptionRef}
+                id="Description"
+                name="Description"
+                placeholder="Describe what is happening"
+                value={description}
+                onChange={(e) => setDescription(e.target.value)}
+                className="w-full h-28 resize-y border border-[#D9D9D9] text-[#515151] font-normal text-[0.875rem] p-2 rounded mt-0 mb-4 focus:outline-none focus:ring-1 focus:ring-[#2545FF] focus:border-[#2545FF]"
+            ></textarea>
+
 
           <label
             htmlFor="Location"
