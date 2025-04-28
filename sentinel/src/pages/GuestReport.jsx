@@ -2,6 +2,7 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
+import Header from "../components/Header";
 import "react-toastify/dist/ReactToastify.css";
 
 const GuestReport = () => {
@@ -38,7 +39,10 @@ const GuestReport = () => {
   };
   
   return (
-    <section style={{ fontFamily: "Poppins, sans-serif" }} className="flex justify-center bg-[#F8F8F8] font-poppins">
+    <section>
+      <Header/>
+
+      <section style={{ fontFamily: "Poppins, sans-serif" }} className="flex justify-center bg-[#F8F8F8] font-poppins">
       <ToastContainer />
       <div className="w-[40%] flex flex-col justify-centermd:pl-8 bg-white border-[1px] border-solid border-[#E7E7E7] rounded-[1rem] py-[2rem] lg:px-[2.5rem] px-[1rem]">
         <h2 className="text-[2rem] font-[700] bg-gradient-to-r from-[#4A3391] to-[#001ECA] bg-clip-text text-transparent mb-[0.7rem]">
@@ -96,6 +100,8 @@ const GuestReport = () => {
         </button>
       </div>
     </section>
+    </section>
+    
   );
 };
 
