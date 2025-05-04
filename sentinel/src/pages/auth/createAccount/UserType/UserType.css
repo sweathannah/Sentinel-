@@ -1,6 +1,6 @@
 .UserType {
     background-color: #F8F8F8;
-    min-height: calc(100vh - 95px);
+    min-height: calc(100vh);
     display: flex;
     justify-content: center;
     align-items: center;
