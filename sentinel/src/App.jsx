@@ -6,7 +6,6 @@ import 'react-toastify/dist/ReactToastify.css'; // Important CSS
 function App() {
   return (
     <div>
-      <Header />
       <main>
         <Outlet />
       </main>
