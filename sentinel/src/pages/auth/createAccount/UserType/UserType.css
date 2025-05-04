@@ -1,0 +1,60 @@
+.UserType {
+    background-color: #F8F8F8;
+    min-height: calc(100vh - 95px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1rem;
+}
+
+.card {
+    max-width: 26.25rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: .75rem;
+    border: .175rem solid #e7e7e7;
+    padding: 1.5rem;
+}
+
+.card-header {
+    border-bottom: .1rem solid #e7e7e7;
+
+}
+
+.card-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-subheading {
+    font-size: .9rem;
+    color: #444444;
+    font-weight: normal;
+}
+
+
+.card-body {
+    border-bottom: .1rem solid #e7e7e7;
+}
+
+.card-body-heading {
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.card-body-subheading {
+    font-size: .9rem;
+    color: #444444;
+    font-weight: normal;
+}
+
+.btn-container {
+    width: 100%;
+}
+.btn {
+    width: inherit;
+}
+
+.ctas {
+    border-bottom: .1rem solid #e7e7e7;
+}

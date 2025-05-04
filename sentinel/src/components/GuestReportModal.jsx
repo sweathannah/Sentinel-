@@ -1,5 +1,6 @@
 import { useEffect, useState, useRef } from "react";
 import { toast } from "react-toastify";
+import { guestsRequests } from "../../Services";
 
 const GuestReportModal = ({ onClose }) => {
   const [isVisible, setIsVisible] = useState(false);
@@ -33,13 +34,20 @@ const GuestReportModal = ({ onClose }) => {
     setTimeout(onClose, 300);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
+    const timestamp = new Date().toISOString();
 
     if (!description.trim() || !location.trim()) {
       toast.error("Please fill in all fields.");
       return;
     }
+    console.log({location, description})
+    await guestsRequests.guestsMessages({ location, description, timestamp }).then((response) => {
+      console.log(response)
+    }).catch((err) => {
+      console.log(err.message)
+    })
 
     toast.success("🎉 Your anonymous report was submitted successfully!");
 
