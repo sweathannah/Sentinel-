@@ -1,4 +1,21 @@
+import { useEffect } from "react";
+import { dashboardRequests } from "../../Services";
+
 function DashboardPage() {
+
+  useEffect(() => {
+    fetchUserCredential()
+  })
+
+  const fetchUserCredential = async () => {
+    await dashboardRequests.userCredentials().then((response) => {
+      console.log(response.data[0])
+    }).catch((error) => {
+      console.log(error.message)
+    })
+  }
+
+  console.log('user logged in')
     return (
       <div className="dashboard-page">
         {/* Welcome Message */}

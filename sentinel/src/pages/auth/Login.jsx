@@ -144,7 +144,7 @@ const Login = () => {
           </div>
 
           
-            <div className="acc-conditions">Already a user? <Link to={'/login'}>Log In</Link></div>
+            <div className="acc-conditions">Not a user? <Link to={'/user-board'}>Sign up</Link></div>
 
         </div>
 
