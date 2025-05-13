@@ -7,7 +7,7 @@ function DashboardPage() {
 
   console.log('user logged in')
     return (
-      <section className="flex flex-col px-[2rem] gap-[1.5rem]">
+      <section className="flex flex-col px-[2rem] gap-[1.5rem] bg-[#F7F7F7]">
         <article className="justify-between flex flex-row flex-wrap">
           <div className="bg-[#FFFFFF] flex flex-col items-start p-[1rem] border-[2px] border-solid border-[#DDDDDD]    shadow-lg rounded-lg min-w-[25rem] hover:bg-gradient-to-r hover:from-[#B42318] hover:to-[#A80000] hover:text-[#F7F7F7] text-[#000000] transform hover:scale-[1.03] hover:shadow-2xl transition-all duration-300 ease-in-out cursor-pointer">
             <img src="images/dashboard_images/report.svg" alt="Report icon" className="mb-[1rem]" />
