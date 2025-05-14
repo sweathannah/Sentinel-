@@ -12,7 +12,7 @@ function DashboardLayout() {
 
       <div
         className={`flex-1 min-h-screen transition-all duration-300 ${
-          collapsed ? "ml-[5rem]" : "ml-[5rem]"
+          collapsed ? "ml-20" : "ml-64"
         }`}
       >
         <Header collapsed={collapsed} />

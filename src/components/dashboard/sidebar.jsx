@@ -1,18 +1,8 @@
-// src/components/Sidebar.jsx
-import { useState } from "react";
-import {
-  FaTachometerAlt,
-  FaMapMarkedAlt,
-  FaBell,
-  FaUser,
-} from "react-icons/fa";
+// src/components/dashboard/sidebar.jsx
+import { FaTachometerAlt, FaMapMarkedAlt, FaBell, FaUser } from "react-icons/fa";
 import { MdReportProblem } from "react-icons/md";
-import { FiLogOut } from "react-icons/fi";
-import { HiOutlineMenuAlt3 } from "react-icons/hi";
 
-const Sidebar = () => {
-  const [collapsed, setCollapsed] = useState(false);
-
+const Sidebar = ({ collapsed, setCollapsed }) => {
   const toggleSidebar = () => setCollapsed(!collapsed);
 
   const navLinks = [
@@ -33,23 +23,23 @@ const Sidebar = () => {
       {/* Top Section */}
       <div>
         <div className="flex flex-row justify-between items-center mb-8">
-            {/* Logo */}
-            <div className=" w-fit h-5">
-                {!collapsed && (
-                    <img
-                    src="/images/auth_images/logo.png"
-                    alt="Sentinel Logo"
-                    className="w-[120px]"
-                    />
-                )}
-            </div>
-            {/* Toggle Button */}
-            <button
+          {/* Logo */}
+          <div className="w-fit h-5">
+            {!collapsed && (
+              <img
+                src="/images/auth_images/logo.png"
+                alt="Sentinel Logo"
+                className="w-[120px]"
+              />
+            )}
+          </div>
+          {/* Toggle Button */}
+          <button
             onClick={toggleSidebar}
             className="text-gray-600 text-2xl focus:outline-none w-fit h-5 items-start mr-4"
-            >
-                <img src="/images/dashboard_images/toggle.svg" alt="Toggle icon" />
-            </button>
+          >
+            <img src="/images/dashboard_images/toggle.svg" alt="Toggle icon" />
+          </button>
         </div>
         {/* Navigation */}
         <nav className="flex flex-col gap-2">
@@ -71,7 +61,7 @@ const Sidebar = () => {
         <button className="flex items-center gap-3 text-[#444444] hover:text-red-600 p-2 font-medium text-sm rounded-md">
           <img
             src="/images/dashboard_images/settings.svg"
-            alt="Sign Out Icon"
+            alt="Settings Icon"
             className="w-5 h-5"
           />
           {!collapsed && <span>Settings</span>}
