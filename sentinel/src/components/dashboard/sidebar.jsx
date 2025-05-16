@@ -12,7 +12,7 @@ const Sidebar = () => {
             <div className="mb-10">
                 <img src="/images/auth_images/logo.png" alt="Sentinel Logo" />
             </div>
-
+ 
             {/* Menu Links */}
             <nav className="flex flex-col gap-2">
                 <a href="#" className="flex items-center gap-3 text-[#444444] hover:bg-[#2545FF] p-[0.5rem] font-medium text-[1rem] rounded-md hover:text-white">
