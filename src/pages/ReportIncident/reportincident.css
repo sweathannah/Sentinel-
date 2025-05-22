@@ -1,0 +1,13 @@
+.marked-style{
+    border: 1px solid #2545FF;
+}
+
+.marked-style::after {
+    content: url('/images/reportincident_images/mark.svg');
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 16px;
+    height: 16px;
+    transform: translate(-0.25rem, -0.25rem);
+  }

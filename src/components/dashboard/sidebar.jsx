@@ -22,7 +22,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
     >
       {/* Top Section */}
       <div>
-        <div className="flex flex-row justify-between items-center mb-8">
+        <div className="flex flex-row justify-between items-center mb-[2.25rem]">
           {/* Logo */}
           <div className="w-fit h-5">
             {!collapsed && (
@@ -47,7 +47,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
             <a
               href="#"
               key={index}
-              className="flex items-center gap-3 text-[#444444] hover:bg-[#2545FF] p-2 font-medium text-sm rounded-md hover:text-white transition"
+              className="flex items-center gap-4 text-[#444444] hover:bg-[#2545FF] py-3 pl-2 font-medium text-sm rounded-md hover:text-white transition"
             >
               <img src={link.src} alt={`${link.label} icon`} className="w-5 h-5" />
               {!collapsed && <span>{link.label}</span>}
@@ -57,8 +57,8 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
       </div>
 
       {/* Sign Out */}
-      <div className="mt-4 flex flex-col mb-20">
-        <button className="flex items-center gap-3 text-[#444444] hover:text-red-600 p-2 font-medium text-sm rounded-md">
+      <div className="mt- flex flex-col mb-16 gap-2">
+        <button className="flex items-center gap-4 text-[#444444] hover:text-red-600 py-3 pl-2 font-medium text-sm rounded-md">
           <img
             src="/images/dashboard_images/settings.svg"
             alt="Settings Icon"
@@ -66,7 +66,7 @@ const Sidebar = ({ collapsed, setCollapsed }) => {
           />
           {!collapsed && <span>Settings</span>}
         </button>
-        <button className="flex items-center gap-3 text-[#444444] hover:text-red-600 p-2 font-medium text-sm rounded-md">
+        <button className="flex items-center gap-4 text-[#444444] hover:text-red-600 py-3 pl-2 font-medium text-sm rounded-md">
           <img
             src="/images/dashboard_images/signout.svg"
             alt="Sign Out Icon"

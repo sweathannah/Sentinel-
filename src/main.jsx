@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import App from './App';
 import DashboardLayout from './layouts/DashboardLayout';
 import DashboardPage from './pages/DashboardPage';
+import ReportPage from './pages/ReportIncident/ReportIncident';
 
 import './index.css';
 import { 
@@ -16,12 +17,11 @@ import {
   VerifyPhone
 } from './pages';
 
-ReactDOM.createRoot(document.getElementById('root')).render(
+ReactDOM.createRoot(document.getElementById("root")).render(
   <React.StrictMode>
     <Router>
       <Routes>
         <Route path="/" element={<App />}>
-
           {/* Authentication routes  */}
           <Route index element={<AuthPage />} />
           <Route path="/guest-report" element={<GuestReport />}></Route>
@@ -33,8 +33,9 @@ ReactDOM.createRoot(document.getElementById('root')).render(
 
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardPage />} />
-              {/* later you can add more dashboard pages here like <Route path="my-reports" element={<MyReportsPage />} /> */}
-            </Route>
+            <Route path="report-incidents" element={<ReportPage />} />
+            {/* later you can add more dashboard pages here like <Route path="my-reports" element={<MyReportsPage />} /> */}
+          </Route>
         </Route>
       </Routes>
     </Router>

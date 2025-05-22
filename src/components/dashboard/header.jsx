@@ -20,8 +20,8 @@ function Header({ collapsed }) {
 
   return (
     <header
-      className={`bg-[#F8F8F8] py-[2rem] font-poppins flex justify-between items-center w-full transition-all duration-300
-        px-[1.25rem] lg:px-[1.9rem] ${collapsed ? "ml-0" : "ml-0"}`}
+      className={`bg-[#F8F8F8] py-8 font-poppins flex justify-between items-center w-full transition-all duration-300
+        px-[2rem] lg:px-[1.9rem] ${collapsed ? "ml-0" : "ml-0"}`}
     >
       <div className="flex flex-col">
         <h1 className="text-[#000000] font-semibold text-[1.5rem]">
