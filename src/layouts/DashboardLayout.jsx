@@ -31,19 +31,18 @@ function DashboardLayout() {
         toggleDesktopSidebar={toggleDesktopSidebar} // Pass toggler if sidebar has a desktop collapse button
       />
 
-      {/* Main content area */}
       <div
         className={`flex flex-col flex-1 transition-all duration-300
           ${isDesktopSidebarCollapsed ? 'lg:ml-[0.5rem]' : 'lg:ml-[0.5rem]'} `}
       >
-        <Header toggleSidebar={toggleMobileSidebar} /> {/* Pass the toggle function */}
+        <Header toggleSidebar={toggleMobileSidebar} />
         <Outlet />
       </div>
 
       {/* Overlay for when mobile sidebar is open */}
       {isMobileSidebarOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" // Only show overlay on mobile
+          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden" 
           onClick={toggleMobileSidebar}
         ></div>
       )}

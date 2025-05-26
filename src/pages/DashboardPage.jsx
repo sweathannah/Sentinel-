@@ -1,15 +1,18 @@
 import { useEffect, useState } from "react";
 import { dashboardRequests } from "../../Services";
+import EmergencyAlert from "../components/emergency/EmergencyAlert1";
 import { EmergencyAlertIcon, ReportIncidentIcon, SafeRoutesIcon } from '../components/icons/SvgIcons';
+import Slider from "react-slick";
 
 function DashboardPage() {
   console.log('user logged in');
+  const [showAlert, setShowAlert] = useState(false);
   return (
     <section className="flex flex-col lg:px-[2rem] px-[1rem] gap-[1.5rem] bg-[#FFFFFF]">
       {/* Emergency alert cards */}
-      <article className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-[1.5rem] justify-items-center">
+      <article className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-[1.5rem] justify-items-center">
         {/* Emergency alert card */}
-        <div className="bg-[#FFFFFF] w-full max-w-[25.5rem] flex flex-col items-start justify-between p-[1rem] border-[2px] border-solid border-[#DDDDDD] shadow-lg rounded-xl hover:bg-gradient-to-r hover:from-[#F5281C] hover:to-[#A80000] hover:text-[#F7F7F7] text-[#000000] transform hover:scale-[1.03] transition-all duration-300 ease-in-out cursor-pointer hover:shadow-inner">
+        <div onClick={() => setShowAlert(true)} className="bg-[#FFFFFF] w-full max-w-[25.5rem] flex flex-col items-start justify-between p-[1rem] border-[2px] border-solid border-[#DDDDDD] shadow-lg rounded-xl hover:bg-gradient-to-r hover:from-[#F5281C] hover:to-[#A80000] hover:text-[#F7F7F7] text-[#000000] transform hover:scale-[1.03] transition-all duration-300 ease-in-out cursor-pointer hover:shadow-inner">
           <div className="text-[#2545FF]">
             <EmergencyAlertIcon className="mb-[1rem] w-8 h-8" />
           </div>
@@ -48,11 +51,15 @@ function DashboardPage() {
             <p className="font-[400] text-[0.65rem] mt-[0.2rem]">Submit a new safety report</p>
           </div>
         </div>
+
+      {/* Show Emergency Alert Modal */}
+      {showAlert && <EmergencyAlert onClose={() => setShowAlert(false)} />}
       </article>
 
       <article className="grid grid-cols-1 lg:grid-cols-3 gap-[1rem]">
         {/* ANALYSIS */}
         <div className="flex flex-col w-full lg:col-span-2 gap-[1.5rem]">
+          <h3 className="font-[600] text-[#212121] text-[1rem]">Campus safety overview</h3>
           <div className="grid grid-cols-2 md:grid-cols-4 gap-[1rem]">
             <div className="p-[1rem] bg-[#F5F6FF] flex flex-col items-start border-[1px] border-solid border-[#DDDDDD] h-fit shadow-sm rounded-lg w-full">
               <img src="/images/dashboard_images/blue_report.svg" alt="Blue report icon" />
@@ -72,7 +79,9 @@ function DashboardPage() {
             <div className="p-[1rem] bg-[#F5F6FF] flex flex-col items-start border-[1px] border-solid border-[#DDDDDD] h-fit shadow-sm rounded-lg w-full">
               <img src="/images/dashboard_images/blue_alert.svg" alt="Blue alert icon" />
               <h4 className="font-[400] text-[#000000] text-[0.8rem] pt-[0.8rem] w-[9rem]">Emergency alerts</h4>
-              <p className="text-[#444444] font-[700] text-[1.5rem] pt-[0.3rem]">4<span className="text-[0.75rem] font-[400]"> this month</span></p>
+              <p className="text-[#444444] font-[700] text-[1.5rem] pt-[0.3rem]">
+                4<span className="text-[0.75rem] font-[400]"> this month</span>
+              </p>
             </div>
           </div>
 

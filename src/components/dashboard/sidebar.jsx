@@ -119,7 +119,7 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
               className="text-gray-600 text-2xl focus:outline-none"
             >
               {/* You might want a close icon (X) here */}
-              <img src="/images/dashboard_images/close.svg" alt="Close menu" className="w-6 h-6" />
+              <img src="/images/dashboard_images/toggle.svg" alt="Close menu" className="w-6 h-6" />
             </button>
           </div>
           {/* Navigation */}
