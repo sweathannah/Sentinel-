@@ -1,0 +1,103 @@
+.Register {
+    background-color: #F8F8F8;
+    min-height: calc(100vh);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 1.1rem;
+}
+
+.card {
+    max-width: 26.25rem;
+    width: 100%;
+    background-color: #fff;
+    border-radius: .75rem;
+    border: .175rem solid #e7e7e7;
+    padding: 1.5rem;
+}
+
+.card-header {
+    border-bottom: .1rem solid #e7e7e7;
+
+}
+
+.card-heading {
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+.card-subheading {
+    font-size: .9rem;
+    color: #444444;
+    font-weight: normal;
+}
+
+
+.card-body {
+    border-bottom: .1rem solid #e7e7e7;
+}
+
+.card-body-heading {
+    font-size: .9rem;
+    font-weight: bold;
+}
+
+.card-body-subheading {
+    font-size: .9rem;
+    color: #444444;
+    font-weight: normal;
+}
+
+.btn-container {
+    width: 100%;
+}
+.btn {
+    width: inherit;
+}
+
+.reg-label {
+    font-size: .8rem;
+    font-weight: 600 !important;
+    width: 100%;
+}
+
+.reg-inputs {
+    width: 100%;
+    border: .1rem solid #e7e7e7;
+    color: #444444;
+    border-radius: .7rem;
+    padding: .7rem;
+    font-size: .9rem;
+    margin-top: .5rem;
+}
+
+
+.reg-inputs:focus {
+    border: .1rem solid #e7e7e7;
+    box-shadow: none;
+    outline: none;
+}
+
+.reg-inputs::placeholder {
+    font-size: .9rem;
+}
+
+.acc-conditions {
+    text-align: center;
+    font-size: .8rem;
+    font-weight: 600 !important;
+    color: #444444;
+}
+
+a {
+    color: rgba(37, 69, 255, 1);
+}
+
+.error-table {
+    background-color: #f8b9b9;
+    border-radius: .8rem;
+    padding: 1.2rem;
+    color: #000;
+    text-align: center;
+    font-size: .9rem;
+}
