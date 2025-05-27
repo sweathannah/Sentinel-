@@ -9,3 +9,45 @@
 * {
     font-family: "Poppins", sans-serif;
 }
+
+/* Add this to your main CSS file, e.g., src/index.css */
+
+@keyframes pulse-ring {
+  0% {
+    transform: scale(0.33);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.5); /* or adjust for desired spread size */
+    opacity: 0;
+  }
+}
+
+.animate-pulse-ring::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  border-radius: 50%;
+  background: currentColor; /* Will use the text color of the parent, which is the blue of the SOS button */
+  opacity: 0;
+  animation: pulse-ring 1.5s cubic-bezier(0.24, 0, 0.38, 1) infinite; /* Adjust duration and timing function */
+  z-index: -1; /* Place it behind the SOS button */
+}
+
+/* Optional: Add a subtle pulse/scale to the button itself */
+@keyframes button-pulse {
+  0%, 100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.05); /* Subtle growth */
+  }
+}
+
+.animate-button-pulse {
+    animation: button-pulse 1.5s ease-in-out infinite; /* Match pulse-ring duration */
+}
