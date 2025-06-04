@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import './reportincident.css';
+import { Link } from 'react-router-dom';
+import LocationForm from '../../components/reportincident/LocationForm';
 
 function ReportPage() {
   const [selectedIndex, setSelectedIndex] = useState(null);
@@ -63,13 +65,13 @@ function ReportPage() {
           <p>Location</p>
           <div className="mt-4 h-20 w-full bg-white rounded-xl border border-[#DDDDDD] text-sm flex justify-between items-center p-6">
             <span className="flex gap-[10px] items-center">
-              <a href="#">
+              <Link to="/dashboard/location-form">
                 <img
                   src="/images/reportincident_images/location-line.svg"
                   alt="Location icon"
                   className="w-8 h-8"
                 />
-              </a>
+              </Link>
               <p>School Park, Unilorin Campus</p>
             </span>
             <a href="#" className="text-[#2545FF]">

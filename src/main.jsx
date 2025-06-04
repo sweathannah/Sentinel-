@@ -5,6 +5,7 @@ import App from './App';
 import DashboardLayout from './layouts/DashboardLayout';
 import DashboardPage from './pages/DashboardPage';
 import ReportPage from './pages/ReportIncident/ReportIncident';
+import LocationForm from './components/reportincident/LocationForm';
 
 import './index.css';
 import { 
@@ -34,6 +35,9 @@ ReactDOM.createRoot(document.getElementById("root")).render(
           <Route path="/dashboard" element={<DashboardLayout />}>
             <Route index element={<DashboardPage />} />
             <Route path="report-incidents" element={<ReportPage />} />
+              <Route path="location-form" element={<LocationForm />} />
+            
+
             {/* later you can add more dashboard pages here like <Route path="my-reports" element={<MyReportsPage />} /> */}
           </Route>
         </Route>
