@@ -63,7 +63,7 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
               <a
                 href="#"
                 key={index}
-                className="flex items-center gap-3 text-[#444444] hover:bg-[#2545FF] p-2 font-medium text-sm rounded-md hover:text-white transition"
+                className="flex items-center gap-4 text-[#444444] hover:bg-[#2545FF] py-3 pl-2 font-medium text-sm rounded-md hover:text-white transition"
               >
                 <link.icon className="w-5 h-5" />
                 {!isDesktopSidebarCollapsed && <span>{link.label}</span>} {/* Use isDesktopSidebarCollapsed */}
@@ -73,17 +73,17 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
         </div>
 
         {/* Bottom Section (Settings and Sign Out) */}
-        <div className=" flex flex-col ">
+        <div className=" flex flex-col gap-2">
           <a // Changed to <a> for consistency with navigation items
             href="#"
-            className="flex items-center gap-3 text-[#444444] hover:text-red-600 p-2 font-medium text-sm rounded-md"
+            className="flex items-center gap-4 text-[#444444] hover:text-red-600 py-3 pl-2 font-medium text-sm rounded-md"
           >
             <SettingsIcon className="w-5 h-5" />
             {!isDesktopSidebarCollapsed && <span>Settings</span>}
           </a>
           <a // Changed to <a> for consistency with navigation items
             href="#"
-            className="flex items-center gap-3 text-[#444444] hover:text-red-600 p-2 font-medium text-sm rounded-md"
+            className="flex items-center gap-4 text-[#444444] hover:text-red-600 py-3 pl-2 font-medium text-sm rounded-md"
           >
             <SignOutIcon className="w-5 h-5" />
             {!isDesktopSidebarCollapsed && <span>Sign Out</span>}
