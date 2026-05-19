@@ -1,7 +1,7 @@
 function LocationForm() {
 
     return (
-      <section className="w-[37.5rem] bg-[#FFFFFF] p-6 font-poppins">
+      <section className="w-[37.5rem] bg-[#FFFFFF] p-6 font-poppins rounded-2xl">
         <div className="flex justify-between items-center">
           <span className="flex gap-3">
             <img
@@ -18,7 +18,7 @@ function LocationForm() {
           />
         </div>
 
-        <div className="mt-6 bg-[#F8F8F8] rounded-[8px] border border-[#DDDDDD] p-6 h-[4.5rem] flex items-center gap-[6px]">
+        <div className="mt-6 bg-[#F8F8F8] rounded-[8px] border border-[#DDDDDD] pl-6 -[4.5rem] flex items-center gap-[6px]">
           <img
             src="/images/reportincident_images/search.svg"
             alt="A search icon"
@@ -29,13 +29,13 @@ function LocationForm() {
             name="search-bar"
             id="search-bar"
             placeholder="Search Address"
-            className="focus:border-none bg-transparent h-6"
+            className="focus:border-none bg-transparent h-6 p-6 w-full"
           />
         </div>
 
         <div className="mt-6 h-[13.75rem] rounded-[4px]"></div>
 
-        <div className="mt-6 text-[#515151] p-6">
+        <div className="mt-6 text-[#515151]">
           <span className="flex gap-[10px]">
             <img
               src="/images/reportincident_images/location-line.svg"
@@ -66,7 +66,7 @@ function LocationForm() {
           <line y1="0.5" x2="552" y2="1.5" stroke="#DDDDDD" />
         </svg>
 
-        <button type="submit" className="mt-6 bg-[#2545FF] p- h-[69px] rounded-[12px] font-medium text-[18px] text-[#FFFFFF] w-full">
+        <button type="submit" className="mt-6 bg-[#2545FF]  h-[69px] rounded-[12px] font-medium text-[18px] text-[#FFFFFF] w-full">
           Confirm location
         </button>
       </section>

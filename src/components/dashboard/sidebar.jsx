@@ -1,4 +1,5 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import {
   DashboardIcon,
   ReportIncidentIcon,
@@ -16,12 +17,12 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
   // Mobile sidebar state is controlled by setIsMobileSidebarOpen passed from DashboardLayout.
 
   const navLinks = [
-    { icon: DashboardIcon, label: "Dashboard" },
-    { icon: ReportIncidentIcon, label: "Report Incident" },
-    { icon: SafeRoutesIcon, label: "Safe Routes" },
-    { icon: CounsellingIcon, label: "Counselling" },
-    { icon: MyReportsIcon, label: "My Reports" },
-    { icon: EmergencyAlertIcon, label: "Emergency Alerts" },
+    { icon: DashboardIcon, label: "Dashboard", path: "/dashboard" },
+    { icon: ReportIncidentIcon, label: "Report Incident", path: "/dashboard/report-incidents" },
+    { icon: SafeRoutesIcon, label: "Safe Routes", path: "" },
+    { icon: CounsellingIcon, label: "Counselling", path: "" },
+    { icon: MyReportsIcon, label: "My Reports", path: "" },
+    { icon: EmergencyAlertIcon, label: "Emergency Alerts", path: "" },
   ];
 
   return (
@@ -30,7 +31,7 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
       <aside
         className={`
           hidden lg:flex                     /* Hide on mobile, show on desktop */
-          h-screen bg-[#F8F8F8] shadow-lg   /* Base styles */
+          h-screen bg-[#FFFFFF] shadow-lg   /* Base styles */
           px-4 py-6 flex-col justify-between font-poppins transition-all duration-300
           sticky top-0 left-0 z-30          /* Sticky for desktop, lower z-index than mobile */
           ${isDesktopSidebarCollapsed ? "w-20" : "w-[15rem]"} /* Desktop collapse/expand logic */
@@ -40,7 +41,9 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
         <div>
           <div className="flex flex-row justify-between items-center mb-8">
             {/* Logo */}
-            <div className="w-fit h-5 overflow-hidden"> {/* Added overflow-hidden to hide logo when collapsed */}
+            <div className="w-fit h-5 overflow-hidden">
+              {" "}
+              {/* Added overflow-hidden to hide logo when collapsed */}
               {!isDesktopSidebarCollapsed && ( // Use isDesktopSidebarCollapsed
                 <img
                   src="/images/auth_images/logo.png"
@@ -54,20 +57,24 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
               onClick={toggleDesktopSidebar} // Use toggleDesktopSidebar from props
               className="text-gray-600 text-2xl focus:outline-none w-fit h-5 items-start mr-4"
             >
-              <img src="/images/dashboard_images/toggle.svg" alt="Toggle icon" />
+              <img
+                src="/images/dashboard_images/toggle.svg"
+                alt="Toggle icon"
+              />
             </button>
           </div>
           {/* Navigation */}
           <nav className="flex flex-col gap-2">
             {navLinks.map((link, index) => (
-              <a
-                href="#"
+              <Link
+                to={link.path}
                 key={index}
                 className="flex items-center gap-4 text-[#444444] hover:bg-[#2545FF] py-3 pl-2 font-medium text-sm rounded-md hover:text-white transition"
               >
                 <link.icon className="w-5 h-5" />
-                {!isDesktopSidebarCollapsed && <span>{link.label}</span>} {/* Use isDesktopSidebarCollapsed */}
-              </a>
+                {!isDesktopSidebarCollapsed && <span>{link.label}</span>}{" "}
+                {/* Use isDesktopSidebarCollapsed */}
+              </Link>
             ))}
           </nav>
         </div>
@@ -99,7 +106,7 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
           w-[15rem] z-50                     /* Width and high z-index to be on top */
           flex flex-col justify-between font-poppins transition-transform duration-300 ease-in-out /* Flex layout, animation */
           lg:hidden                          /* Hide on large screens and up */
-          ${isMobileSidebarOpen ? 'translate-x-0' : '-translate-x-full'} /* Slide in/out effect */
+          ${isMobileSidebarOpen ? "translate-x-0" : "-translate-x-full"} /* Slide in/out effect */
         `}
       >
         {/* Top Section */}
@@ -119,7 +126,11 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
               className="text-gray-600 text-2xl focus:outline-none"
             >
               {/* You might want a close icon (X) here */}
-              <img src="/images/dashboard_images/toggle.svg" alt="Close menu" className="w-6 h-6" />
+              <img
+                src="/images/dashboard_images/toggle.svg"
+                alt="Close menu"
+                className="w-6 h-6"
+              />
             </button>
           </div>
           {/* Navigation */}
@@ -132,7 +143,8 @@ const Sidebar = ({ isMobileSidebarOpen, setIsMobileSidebarOpen, isDesktopSidebar
                 className="flex items-center gap-3 text-[#444444] hover:bg-[#2545FF] p-2 font-medium text-sm rounded-md hover:text-white transition"
               >
                 <link.icon className="w-5 h-5" />
-                <span>{link.label}</span> {/* Always show labels on mobile sidebar */}
+                <span>{link.label}</span>{" "}
+                {/* Always show labels on mobile sidebar */}
               </a>
             ))}
           </nav>

@@ -20,14 +20,18 @@ function Header({ toggleSidebar }) { // Receive toggleSidebar as a prop
 
   return (
     <header
-      className={`bg-[#FFFFFF] py-[2rem] font-poppins flex justify-between items-center w-full transition-all duration-300
+      className={`bg-[#F8F8F8] py-[2rem] font-poppins flex justify-between items-center w-full transition-all duration-300
         px-[1.25rem] lg:px-[1.9rem]`} // Removed ml-0 as it's not directly controlling header margin based on sidebar collapse state
     >
       {/* Hamburger menu for small to medium screens */}
       {/* It should be visible below lg breakpoint */}
       <div className="block lg:hidden cursor-pointer" onClick={toggleSidebar}>
         {/* Replace with your actual hamburger SVG icon */}
-        <img src="/images/dashboard_images/ham.svg" alt="menu-icon" className="w-6 h-6" />
+        <img
+          src="/images/dashboard_images/ham.svg"
+          alt="menu-icon"
+          className="w-6 h-6"
+        />
         {/* If using @heroicons/react: <Bars3Icon className="w-6 h-6 text-[#000000]" /> */}
       </div>
 
@@ -56,9 +60,7 @@ function Header({ toggleSidebar }) { // Receive toggleSidebar as a prop
               </svg>
             </span>
           )}
-          <span className="mx-2">
-            {userDetails?.first_name}
-          </span>
+          <span className="mx-2">{userDetails?.first_name}</span>
         </h1>
         <p className="font-normal text-[1rem] text-[#444444]">
           Welcome back to your safety dashboard
@@ -66,7 +68,11 @@ function Header({ toggleSidebar }) { // Receive toggleSidebar as a prop
       </div>
 
       <div>
-        <img src="/images/dashboard_images/profile_pic.svg" alt="Profile Picture" className="w-8 h-8" /> 
+        <img
+          src="/images/dashboard_images/profile_pic.svg"
+          alt="Profile Picture"
+          className="w-8 h-8"
+        />
       </div>
     </header>
   );

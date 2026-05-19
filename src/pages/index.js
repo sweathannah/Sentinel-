@@ -5,3 +5,4 @@ export { default as VerifyPhone } from './auth/createAccount/VerifyPhone/VerifyP
 export { default as VerifyEmail } from './auth/createAccount/VerifyEmail/VerifyEmail'
 export { default as Register } from './auth/createAccount/Register/Register'
 export { default as Login } from './auth/Login'
+export { default as SoundWave } from "../assets/wave.svg"

@@ -32,8 +32,8 @@ function DashboardLayout() {
       />
 
       <div
-        className={`flex flex-col flex-1 transition-all duration-300
-          ${isDesktopSidebarCollapsed ? 'lg:ml-[0.5rem]' : 'lg:ml-[0.5rem]'} `}
+        className={`flex flex-col flex-1 transition-all duration-300`} 
+        // ${isDesktopSidebarCollapsed ? 'lg:ml-[0.5rem]' : 'lg:ml-[0.5rem]'}
       >
         <Header toggleSidebar={toggleMobileSidebar} />
         <Outlet />
