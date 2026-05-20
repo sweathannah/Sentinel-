@@ -78,7 +78,8 @@ export const authRequests = {
     
     // set/create users profile 
     async setProfile (data) {
-        const userId = JSON.parse(localStorage.getItem('sb-nggzvtkbaoxtucfcgjfm-auth-token'))
+        const storageKey = `sb-${import.meta.env.VITE_SUPABASE_PROJECT_ID}-auth-token`;
+        const userId = JSON.parse(localStorage.getItem(storageKey))
         console.log(userId.user.id)
         const userProfile = await supabase.from('profiles').insert([
             {

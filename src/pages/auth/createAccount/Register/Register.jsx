@@ -7,7 +7,8 @@ import { authRequests } from '../../../../../Services';
 const Register = () => {
   const navigate = useNavigate();
   const { register, handleSubmit, formState: { errors } } = useForm()
-  const userId = JSON.parse(localStorage.getItem('sb-nggzvtkbaoxtucfcgjfm-auth-token'))
+  const storageKey = `sb-${import.meta.env.VITE_SUPABASE_PROJECT_ID}-auth-token`;
+  const userId = JSON.parse(localStorage.getItem(storageKey))
   const urlParams = new URLSearchParams(window.location.search)
   const user_type = urlParams.get('user_type')
 
